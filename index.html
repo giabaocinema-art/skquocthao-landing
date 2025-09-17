@@ -50,6 +50,20 @@
       opacity: 0.8;
     }
   </style>
+  <script>
+    // fallback: nếu app Facebook không mở được thì tự chuyển sang web
+    function openFacebookApp(pageId, webUrl) {
+      var appUrl = "fb://page/" + pageId;
+      var start = Date.now();
+      window.location = appUrl;
+
+      setTimeout(function () {
+        if (Date.now() - start < 1500) {
+          window.location = webUrl; // fallback sang web
+        }
+      }, 1200);
+    }
+  </script>
 </head>
 <body>
   <!-- Logo -->
@@ -59,8 +73,15 @@
   <h1>Ủng hộ Sân khấu Quốc Thảo 🎭</h1>
   
   <!-- Nút -->
-  <a class="btn" href="fb://page/144293219927729">⭐ Mở Fanpage trong App</a>
-  <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/skquocthao/" target="_blank">🔗 Chia sẻ Fanpage</a>
+  <a class="btn" href="javascript:void(0);" 
+     onclick="openFacebookApp('189123281659320','https://www.facebook.com/skquocthao/')">
+     ⭐ Theo dõi Fanpage
+  </a>
+
+  <a class="btn" href="javascript:void(0);" 
+     onclick="openFacebookApp('189123281659320','https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/skquocthao/')">
+     🔗 Chia sẻ Fanpage
+  </a>
 
   <!-- Footer -->
   <footer>© 2025 Sân khấu Quốc Thảo</footer>
