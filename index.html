@@ -4,27 +4,61 @@
   <meta charset="UTF-8">
   <title>Ủng hộ Sân khấu Quốc Thảo</title>
   <style>
-    body { font-family: sans-serif; text-align: center; padding: 40px; background: #f8f8f8; }
-    h1 { color: #222; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: linear-gradient(135deg, #1a237e, #0d47a1);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    img.logo {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+    h1 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
     .btn {
-      display: block;
-      width: 260px;
-      margin: 20px auto;
-      padding: 15px;
-      background: #1877f2;
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 25px;
+      background: #ff5252;
       color: white;
       font-size: 18px;
       font-weight: bold;
-      text-decoration: none;
       border-radius: 8px;
-      transition: 0.2s ease;
+      text-decoration: none;
+      transition: 0.3s;
     }
-    .btn:hover { opacity: 0.9; transform: scale(1.05); }
+    .btn:hover {
+      background: #ff1744;
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
-  <h1>Ủng hộ Sân khấu Quốc Thảo</h1>
-  <a class="btn" href="https://www.facebook.com/skquocthao/?ref=qr_code" target="_blank">📌 Theo dõi Fanpage</a>
+  <!-- Logo -->
+  <img src="logo.png" alt="Logo Sân khấu Quốc Thảo" class="logo">
+
+  <!-- Tiêu đề -->
+  <h1>Ủng hộ Sân khấu Quốc Thảo 🎭</h1>
+  
+  <!-- Nút -->
+  <a class="btn" href="https://www.facebook.com/skquocthao/?ref=qr_code" target="_blank">⭐ Theo dõi Fanpage</a>
   <a class="btn" href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/skquocthao/" target="_blank">🔗 Chia sẻ Fanpage</a>
+
+  <!-- Footer -->
+  <footer>© 2025 Sân khấu Quốc Thảo</footer>
 </body>
 </html>
