@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ủng hộ Sân khấu Quốc Thảo</title>
+  <title>Sân khấu Quốc Thảo 🎭</title>
   <style>
     body {
       margin: 0;
@@ -23,27 +23,26 @@
       margin-bottom: 20px;
     }
     h1 {
-      font-size: 28px;
+      font-size: 26px;
       margin-bottom: 20px;
     }
     .btn {
       display: block;
       width: 80%;
-      max-width: 300px;
+      max-width: 320px;
       margin: 10px auto;
       padding: 15px;
-      background: #ff5252;
-      color: white;
       font-size: 18px;
       font-weight: bold;
       border-radius: 8px;
       text-decoration: none;
+      color: white;
       transition: 0.3s;
     }
-    .btn:hover {
-      background: #ff1744;
-      transform: scale(1.05);
-    }
+    .btn:hover { transform: scale(1.05); }
+    .facebook { background: #1877f2; }
+    .messenger { background: #00b2ff; }
+    .share { background: #ff5252; }
     footer {
       margin-top: 40px;
       font-size: 14px;
@@ -51,61 +50,47 @@
     }
   </style>
   <script>
-    // Mở page trong app Facebook
+    // Auto mở Fanpage khi vào landing
+    window.onload = function () {
+      var appUrl = "fb://page/189123281659320";  
+      var webUrl = "https://www.facebook.com/skquocthao/";
+      window.location = appUrl;
+      setTimeout(function () {
+        window.location.href = webUrl;
+      }, 1200);
+    };
+
+    // Mở fanpage theo nút
     function openFacebookPage() {
       var appUrl = "fb://page/189123281659320";
       var webUrl = "https://www.facebook.com/skquocthao/";
-      var start = Date.now();
       window.location = appUrl;
-      setTimeout(function () {
-        if (Date.now() - start < 1500) window.location = webUrl;
-      }, 1200);
-    }
-
-    // Chia sẻ Fanpage
-    function shareFacebookPage() {
-      var appUrl = "fb://page/189123281659320";
-      var webUrl = "https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/skquocthao/";
-      var start = Date.now();
-      window.location = appUrl;
-      setTimeout(function () {
-        if (Date.now() - start < 1500) window.location = webUrl;
-      }, 1200);
+      setTimeout(function () { window.location.href = webUrl; }, 1200);
     }
 
     // Mở Messenger chat
     function openMessenger() {
       var appUrl = "fb-messenger://user-thread/189123281659320";
       var webUrl = "https://m.me/skquocthao";
-      var start = Date.now();
       window.location = appUrl;
-      setTimeout(function () {
-        if (Date.now() - start < 1500) window.location = webUrl;
-      }, 1200);
+      setTimeout(function () { window.location.href = webUrl; }, 1200);
+    }
+
+    // Chia sẻ fanpage
+    function sharePage() {
+      var webUrl = "https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/skquocthao/";
+      window.location.href = webUrl;
     }
   </script>
 </head>
 <body>
-  <!-- Logo -->
   <img src="SKQT.jpg" alt="Logo Sân khấu Quốc Thảo" class="logo">
+  <h1>Ủng hộ & Kết nối cùng Sân khấu Quốc Thảo 🎭</h1>
 
-  <!-- Tiêu đề -->
-  <h1>Ủng hộ Sân khấu Quốc Thảo 🎭</h1>
-  
-  <!-- Nút -->
-  <a class="btn" href="javascript:void(0);" onclick="openFacebookPage()">
-     ⭐ Theo dõi Fanpage
-  </a>
+  <a class="btn facebook" href="javascript:void(0);" onclick="openFacebookPage()">⭐ Theo dõi Fanpage</a>
+  <a class="btn messenger" href="javascript:void(0);" onclick="openMessenger()">💬 Nhắn tin Messenger</a>
+  <a class="btn share" href="javascript:void(0);" onclick="sharePage()">🔗 Chia sẻ Fanpage</a>
 
-  <a class="btn" href="javascript:void(0);" onclick="shareFacebookPage()">
-     🔗 Chia sẻ Fanpage
-  </a>
-
-  <a class="btn" href="javascript:void(0);" onclick="openMessenger()">
-     💬 Nhắn tin Messenger
-  </a>
-
-  <!-- Footer -->
   <footer>© 2025 Sân khấu Quốc Thảo</footer>
 </body>
 </html>
