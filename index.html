@@ -51,16 +51,36 @@
     }
   </style>
   <script>
-    // fallback: nếu app Facebook không mở được thì tự chuyển sang web
-    function openFacebookApp(pageId, webUrl) {
-      var appUrl = "fb://page/" + pageId;
+    // Mở page trong app Facebook
+    function openFacebookPage() {
+      var appUrl = "fb://page/189123281659320";
+      var webUrl = "https://www.facebook.com/skquocthao/";
       var start = Date.now();
       window.location = appUrl;
-
       setTimeout(function () {
-        if (Date.now() - start < 1500) {
-          window.location = webUrl; // fallback sang web
-        }
+        if (Date.now() - start < 1500) window.location = webUrl;
+      }, 1200);
+    }
+
+    // Chia sẻ Fanpage
+    function shareFacebookPage() {
+      var appUrl = "fb://page/189123281659320";
+      var webUrl = "https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/skquocthao/";
+      var start = Date.now();
+      window.location = appUrl;
+      setTimeout(function () {
+        if (Date.now() - start < 1500) window.location = webUrl;
+      }, 1200);
+    }
+
+    // Mở Messenger chat
+    function openMessenger() {
+      var appUrl = "fb-messenger://user-thread/189123281659320";
+      var webUrl = "https://m.me/skquocthao";
+      var start = Date.now();
+      window.location = appUrl;
+      setTimeout(function () {
+        if (Date.now() - start < 1500) window.location = webUrl;
       }, 1200);
     }
   </script>
@@ -73,14 +93,16 @@
   <h1>Ủng hộ Sân khấu Quốc Thảo 🎭</h1>
   
   <!-- Nút -->
-  <a class="btn" href="javascript:void(0);" 
-     onclick="openFacebookApp('189123281659320','https://www.facebook.com/skquocthao/')">
+  <a class="btn" href="javascript:void(0);" onclick="openFacebookPage()">
      ⭐ Theo dõi Fanpage
   </a>
 
-  <a class="btn" href="javascript:void(0);" 
-     onclick="openFacebookApp('189123281659320','https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/skquocthao/')">
+  <a class="btn" href="javascript:void(0);" onclick="shareFacebookPage()">
      🔗 Chia sẻ Fanpage
+  </a>
+
+  <a class="btn" href="javascript:void(0);" onclick="openMessenger()">
+     💬 Nhắn tin Messenger
   </a>
 
   <!-- Footer -->
